@@ -132,8 +132,8 @@ module "webserver" {
 output "instance_ip_addr" {
   description = "The public IP and dns of the web ec2 instance."
   value = {
-    "public_ip" = module.webserver.public_ip
-    "dns_name"  = module.webserver.public_dns
+    "public_ip" = module.webserver.instance_ip_address
+    "dns_name"  = module.webserver.instance_dns_name
   }
 }
 
