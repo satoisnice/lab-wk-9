@@ -5,7 +5,7 @@ variable "project_name" {
 }
 
 variable "ami" {
-    description = AMI ID 
+    description = "AMI ID"
     type = string 
 }
 
@@ -27,7 +27,7 @@ variable "vpc_security_group_ids" {
 }
 
 variable "subnet_id" {
-    description = "subnet ID of instance
+    description = "subnet ID of instance"
     type = string
 }
 
