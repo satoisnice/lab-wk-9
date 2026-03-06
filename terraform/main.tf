@@ -125,9 +125,6 @@ module "webserver" {
 	key_name = "lab_key"
   	vpc_security_group_ids = [aws_security_group.web.id]
 	subnet_id              = aws_subnet.web.id
-	tags = {
-	 Name = "Web"
-	}
 }
 
 # print public ip and dns to terminal
@@ -135,8 +132,8 @@ module "webserver" {
 output "instance_ip_addr" {
   description = "The public IP and dns of the web ec2 instance."
   value = {
-    "public_ip" = aws_instance.web.public_ip
-    "dns_name"  = aws_instance.web.public_dns
+    "public_ip" = module.webserver.public_ip
+    "dns_name"  = module.webserver.public_dns
   }
 }
 
