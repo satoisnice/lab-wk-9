@@ -122,7 +122,7 @@ module "webserver" {
 	source = "./modules/web-server/"
 	project_name = local.project_name
 	ami   = data.aws_ami.ansible-nginx.id
-	key_name = "lab_key"
+	key_name = "aws-4640"
   	vpc_security_group_ids = [aws_security_group.web.id]
 	subnet_id              = aws_subnet.web.id
 }
