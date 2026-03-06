@@ -120,7 +120,7 @@ resource "aws_vpc_security_group_egress_rule" "web-egress" {
 
 module "webserver" {
 	source = "./modules/web-server/"
-	project_name = locals.project_name
+	project_name = local.project_name
 	ami   = data.aws_ami.ansible-ngnix.id
 	key_name = "lab_key"
   	vpc_security_group_ids = [aws_security_group.web.id]
